@@ -1,0 +1,45 @@
+<html>
+<head>
+<script languague = "JavaScript">
+var answer = ["Probably", "Always", "Most likely", "Definitaly Not", "Never", "No", "Almost", "In a million years", "Soon", "Very soon"];
+function random()
+{ 
+
+    var rand = -1;
+    var solution = document.getElementById("answer");
+    var userQ = document.getElementById("question");
+ //rand = Math.random(); //returns a random decimal between 0 (inclusive) and 1 (exclusive)
+// create a random number between 0 - 5 (inclusive)
+
+// multiply Math.random () by the NUMBER OF OPTIONS
+rand = Math.random()*answers.length; // 0 - 5
+rand = Math.floor(rand);
+    
+    alert(userQ.value.length);
+if (userQ.value.length == 0)
+}
+*/
+</script>
+    
+    <p> Click here to  <a href= "index.html"> return to my Home Page. </a>
+</head>
+<body
+    background= "images/herobcgnd.jpeg">
+<center>
+    <h1>Magic 8 Ball</h1>
+
+<img src="images/8ball.jpg" width="450"/>
+
+    
+   <input type = "text" size= "80"/>
+    <input type="button" value="Click here" onClick="random()"/>
+    </center>
+    
+    
+    
+</body>
+</html>
+
+
+
+
