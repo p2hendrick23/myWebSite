@@ -1,75 +1,88 @@
 <html>
+
 <head>
+
+<font color="white">
+
 <script languague = "JavaScript">
 
-var answers = ["yes", "no", "maybe", "probably", "definitely", "perhaps", 
-"most definitely not", "possibly", "never", "of course"];
+var answers = ["Maybe", "Nope", "In a million years", "Yes", "Definitely Not", "Always", "Definitaly", "Not happening buddy", "No", "Soon"];
 
 function random()
-
 {
-
-var rand = -1;
+var rand = -1; // local variable
 var userQ = document.getElementById("question");
 var myAnswer = document.getElementById("answer");
 
 
 
-//Math.random returns a random decimal between 0 (inclusive) and 1 (exclusive)
-//rand = rand * (10); // 0.000 and 9.99999
-//generate a random integer between - 10 and 10 inclusive
 
 
-rand = Math.random()*answers.length; // 0 - 10
-rand = Math.floor(rand); // returns the nearest integer that is LESS than the parameter
+rand = Math.random() * answers.length; // 0 - 10
+
+rand = Math.floor(rand); 
 
 
 
-//alert(answer[rand]);
-if (userQ.value.length == 0)
+//alert(userQ.value.length);
+
+if(userQ.value.length == 0) // nothing in the text box
 {
-myAnswer.value = answers[rand]; "Please type a question first"
+myAnswer.value = "Please type a question first";
 }
 else
 {
 myAnswer.value = answers[rand];
+if(rand == 7)
+{
+document.getElementById("player").play();
+}
+}
 }
 
+
+function reset()
+{
+document.getElementById("answer").value = "";
 }
+
+
 
 
 
 </script>
+
 </head>
-<body background="images/herobkgnd.gif">
+
+<body
+background="images/herobcgnd.jpeg" >
+
 <center>
+
 <h1>Magic 8 Ball</h1>
+</br>
+<Img src="images/8ball.jpg"/>
+</br></br>
 
-<img src = "images/8ball.jpg" width = "600"/>
-<br/>
-<br/>
-<br/>
-
-
-<input id = "question" type = "text" size="80"/>
-<br/>
-<br/>
+<input id = "question" type = "text" size="80" onfocusin="reset()"/>
+</br></br></br>
 
 <input type="button" value="Click here" onClick="random()"/>
-<br/>
-<br/>
+</br></br></br>
 
-<input id = "answer" type = "text" size = "80"/>
-<br/>
-<br/>
+<input id = "answer" type = "text" size="80" readonly = true/>
+</br>
 
+<audio id = "player" src = "sounds/nope.mp3"> </audio>
 
-Click here to <a href="index.html">return to my homepage.</a>
 </center>
+
+Click <a href="index.html">here</a> return to my homepage.
+
+</br>
+</br>
+</br>
+
 </body>
+
 </html>
-
-
-    
-    
-
